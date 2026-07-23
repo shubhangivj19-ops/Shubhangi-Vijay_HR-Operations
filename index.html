@@ -166,6 +166,15 @@
       color: #ffffff;
       box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
     }
+
+    /* Certificate Modal Zoom */
+    .cert-preview-img {
+      cursor: zoom-in;
+      transition: transform 0.3s ease;
+    }
+    .cert-preview-img:hover {
+      transform: scale(1.03);
+    }
   </style>
 </head>
 <body class="min-h-screen text-slate-100 relative selection:bg-purple-600 selection:text-white">
@@ -289,23 +298,17 @@
             <div class="absolute -inset-4 rounded-full bg-gradient-to-tr from-purple-600 via-indigo-600 to-purple-400 blur-2xl opacity-40 group-hover:opacity-75 transition duration-1000 animate-pulse-slow"></div>
 
             <!-- Avatar Container with Headshot Photo Thumbnail -->
-            <div class="hero-avatar-frame relative overflow-hidden">
+            <div class="hero-avatar-frame relative overflow-hidden bg-brand-black flex items-center justify-center">
               <img 
                 id="heroAvatarImg" 
                 src="Headshot.jpg" 
                 alt="Shubhangi Vijay — Senior HR Operations Specialist" 
-                class="hero-avatar-img object-cover w-full h-full hover:scale-105 transition-transform duration-300"
+                class="w-full h-full object-cover object-top"
+                onerror="this.onerror=null; this.src='ChatGPT Image Jul 23, 2026, 04_57_34 PM_2.png'; this.onerror=function(){this.style.display='none'; document.getElementById('headshotFallback').style.display='flex';};"
               >
-            </div>
-
-            <!-- Floating Badge Card -->
-            <div class="absolute -bottom-4 -right-2 glass-card px-4 py-2.5 rounded-2xl flex items-center gap-3 border-purple-500/40 shadow-xl shadow-black/80 animate-float">
-              <div class="w-10 h-10 rounded-xl bg-purple-900/80 border border-purple-400/50 flex items-center justify-center text-purple-300">
-                <i class="fa-solid fa-award text-lg"></i>
-              </div>
-              <div>
-                <p class="text-xs font-bold text-white">Spauldie Award Winner</p>
-                <p class="text-[10px] text-purple-300 font-mono">Culture Forward Lead</p>
+              <div id="headshotFallback" style="display:none;" class="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-purple-900/90 to-indigo-950/90 text-purple-200">
+                <i class="fa-solid fa-user-tie text-5xl mb-2 text-purple-300"></i>
+                <span class="text-xs font-mono font-bold tracking-wider">SHUBHANGI VIJAY</span>
               </div>
             </div>
 
@@ -1517,3 +1520,4 @@
 
 </body>
 </html>
+```eof
