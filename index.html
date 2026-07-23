@@ -127,7 +127,7 @@
       background: #a855f7;
     }
 
-    /* Hero Avatar Frame with Precise Circular Crop */
+    /* Hero Avatar Frame with Precise Circular Mapping */
     .hero-avatar-frame {
       position: relative;
       width: 280px;
@@ -156,7 +156,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 20%;
+      object-position: center top;
       border-radius: 50%;
     }
 
@@ -245,14 +245,14 @@
             Senior People Operations leader with <span class="text-purple-300 font-semibold">10+ years of enterprise experience</span> across <span class="text-purple-300 font-semibold">APAC, NA, and EMEA</span>. Specialized in employee lifecycle governance, HRIS administration (ADP, Workday, Salesforce), M365 Copilot AI automations, and multi-jurisdictional compliance.
           </p>
 
-          <!-- CTAs with Working Direct Resume Attachment -->
+          <!-- CTAs with Working Direct Resume Attachment & Fixed LinkedIn URL -->
           <div class="pt-4 flex flex-wrap gap-3 justify-center lg:justify-start items-center">
             <a id="downloadResumeBtn" href="Shubhangi_Vijay_Operations Specialist.pdf" download="Shubhangi_Vijay_Resume.pdf" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-purple-700 via-purple-600 to-indigo-600 hover:from-purple-600 hover:to-indigo-500 text-white font-semibold text-sm shadow-xl shadow-purple-900/50 flex items-center gap-2 hover:scale-105 transition-all">
               <i class="fa-solid fa-file-arrow-down"></i>
               <span>Download Official Resume</span>
             </a>
             
-            <a href="https://linkedin.com/in/shubhangivijay-584530217" target="_blank" rel="noopener" class="px-5 py-3.5 rounded-xl glass-card text-purple-300 hover:text-white font-semibold text-sm flex items-center gap-2 border-purple-500/30 hover:border-purple-400">
+            <a href="https://www.linkedin.com/in/shubhangi-vijay-584530217" target="_blank" rel="noopener noreferrer" class="px-5 py-3.5 rounded-xl glass-card text-purple-300 hover:text-white font-semibold text-sm flex items-center gap-2 border-purple-500/30 hover:border-purple-400">
               <i class="fa-brands fa-linkedin text-lg text-purple-400"></i>
               <span>LinkedIn Profile</span>
             </a>
@@ -281,7 +281,7 @@
 
         </div>
 
-        <!-- Hero Headshot Photograph Column (Directly Embedded Data URI to Guarantee Immediate Display) -->
+        <!-- Hero Headshot Photograph Column -->
         <div class="lg:col-span-5 flex justify-center relative">
           <div class="relative group">
             
@@ -293,9 +293,13 @@
               <img 
                 id="heroAvatarImg" 
                 src="ChatGPT Image Jul 23, 2026, 07_06_01 PM.png" 
-                alt="Shubhangi Vijay — Senior HR Operations Specialist"
-                onerror="this.src='Headshot.jpg';"
+                alt="Shubhangi Vijay — Senior HR Operations Specialist" 
+                onerror="this.onerror=null; this.src='Headshot.jpg'; this.onerror=function(){this.style.display='none'; document.getElementById('headshotFallback').style.display='flex';};"
               >
+              <div id="headshotFallback" style="display:none;" class="absolute inset-0 flex flex-col items-center justify-center bg-brand-black text-purple-300">
+                <i class="fa-solid fa-user-tie text-5xl mb-2 text-purple-400"></i>
+                <span class="text-xs font-mono font-bold tracking-wider">SHUBHANGI VIJAY</span>
+              </div>
             </div>
 
           </div>
@@ -1306,26 +1310,26 @@
           </div>
         </div>
 
-        <!-- Contact Form Box -->
+        <!-- Contact Form Box (Integrated with Formspree for shubhangivj19@gmail.com) -->
         <div class="lg:col-span-6">
           <div class="glass-card rounded-3xl p-8 border-purple-500/30 relative">
             <h3 class="text-xl font-bold text-white mb-2">Send a Direct Message</h3>
-            <p class="text-xs text-slate-400 mb-6">Fill out the form below and I'll get back to you within 24 hours.</p>
+            <p class="text-xs text-slate-400 mb-6">Fill out the form below and it will land directly in your email inbox.</p>
 
-            <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+            <form id="contactForm" action="https://formspree.io/f/xlgppvye" method="POST" class="space-y-4">
               <div>
                 <label class="block text-xs font-mono text-slate-300 mb-1">Your Name</label>
-                <input type="text" id="senderName" required placeholder="e.g. Sarah Jenkins" class="w-full px-4 py-3 rounded-xl bg-brand-black/80 border border-purple-500/30 text-white text-sm focus:outline-none focus:border-purple-400">
+                <input type="text" name="name" required placeholder="e.g. Sarah Jenkins" class="w-full px-4 py-3 rounded-xl bg-brand-black/80 border border-purple-500/30 text-white text-sm focus:outline-none focus:border-purple-400">
               </div>
 
               <div>
                 <label class="block text-xs font-mono text-slate-300 mb-1">Your Email</label>
-                <input type="email" id="senderEmail" required placeholder="s.jenkins@company.com" class="w-full px-4 py-3 rounded-xl bg-brand-black/80 border border-purple-500/30 text-white text-sm focus:outline-none focus:border-purple-400">
+                <input type="email" name="email" required placeholder="s.jenkins@company.com" class="w-full px-4 py-3 rounded-xl bg-brand-black/80 border border-purple-500/30 text-white text-sm focus:outline-none focus:border-purple-400">
               </div>
 
               <div>
                 <label class="block text-xs font-mono text-slate-300 mb-1">Message</label>
-                <textarea id="senderMsg" rows="4" required placeholder="Hello Shubhangi, we would like to discuss an HR Operations leadership opportunity..." class="w-full px-4 py-3 rounded-xl bg-brand-black/80 border border-purple-500/30 text-white text-sm focus:outline-none focus:border-purple-400"></textarea>
+                <textarea name="message" rows="4" required placeholder="Hello Shubhangi, we would like to discuss an HR Operations leadership opportunity..." class="w-full px-4 py-3 rounded-xl bg-brand-black/80 border border-purple-500/30 text-white text-sm focus:outline-none focus:border-purple-400"></textarea>
               </div>
 
               <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-purple-700 to-indigo-600 hover:from-purple-600 hover:to-indigo-500 text-white font-semibold text-sm shadow-lg shadow-purple-900/50 transition-all flex items-center justify-center gap-2">
@@ -1489,20 +1493,8 @@
         });
       }
     });
-
-    // Contact Form Handler
-    function handleContactSubmit(e) {
-      e.preventDefault();
-      const successBox = document.getElementById('formSuccessMsg');
-      if (successBox) {
-        successBox.classList.remove('hidden');
-        document.getElementById('contactForm')?.reset();
-        setTimeout(() => {
-          successBox.classList.add('hidden');
-        }, 5000);
-      }
-    }
   </script>
 
 </body>
 </html>
+```eof
